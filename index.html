@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LibroVoz - Conversor de Texto a Audio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .book-text {
+        font-family: 'Merriweather', serif;
+      }
+      
+      /* 3D Flip Animations */
+      .perspective-container {
+        perspective: 1500px;
+      }
+      
+      .flip-card {
+        transition: transform 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955), opacity 0.3s ease;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+      }
+
+      .flip-out-left {
+        transform: rotateY(-90deg) scale(0.95);
+        opacity: 0.5;
+        transform-origin: left center;
+      }
+
+      .flip-in-right {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+        transform-origin: left center;
+        animation: flipInFromRight 0.4s forwards;
+      }
+      
+      .flip-out-right {
+        transform: rotateY(90deg) scale(0.95);
+        opacity: 0.5;
+        transform-origin: right center;
+      }
+      
+      @keyframes flipInFromRight {
+        from { transform: rotateY(90deg); opacity: 0; }
+        to { transform: rotateY(0deg); opacity: 1; }
+      }
+      
+      @keyframes flipInFromLeft {
+        from { transform: rotateY(-90deg); opacity: 0; }
+        to { transform: rotateY(0deg); opacity: 1; }
+      }
+
+      /* Hide Scrollbar for Flip Mode container */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "pdfjs-dist": "https://aistudiocdn.com/pdfjs-dist@^5.4.394"
+  }
+}
+</script>
+</head>
+  <body class="bg-stone-50 text-stone-900 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

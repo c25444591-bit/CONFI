@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Copy of LibroVoz - PDF to Audio",
+  "description": "A sophisticated PDF text-to-speech reader specialized for converting book content into natural-sounding audio using Gemini 2.5 Flash TTS. Features page-by-page parsing and immersive playback.",
+  "requestFramePermissions": []
+}
